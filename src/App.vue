@@ -144,4 +144,11 @@ body {
     font-size: 3.5rem;
   }
 }
+
+li.nav-item {
+  transition: all 0.2s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}
 </style>

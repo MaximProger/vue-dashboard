@@ -2,22 +2,14 @@
   <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
-        <li class="nav-item">
-          <router-link class="nav-link active" to="/">
+        <li v-for="link in links" :key="link.url" class="nav-item">
+          <router-link
+            class="nav-link"
+            :class="{ active: link.url == $route.path }"
+            :to="link.url"
+          >
             <span data-feather="home"></span>
-            Главная <span class="sr-only">(current)</span>
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/todo">
-            <span data-feather="file"></span>
-            Список дел
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/gallery">
-            <span data-feather="shopping-cart"></span>
-            Галлерея
+            {{ link.title }}
           </router-link>
         </li>
       </ul>
@@ -27,7 +19,14 @@
 
 <script>
 export default {
-  name: 'sidebar'
+  name: 'sidebar',
+  data: () => ({
+    links: [
+      { title: 'Главная', url: '/' },
+      { title: 'Список дел', url: '/todo' },
+      { title: 'Галлерея', url: '/gallery' }
+    ]
+  })
 }
 </script>
 
