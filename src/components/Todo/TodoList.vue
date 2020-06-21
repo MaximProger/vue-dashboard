@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import TodoItem from '@/components/TodoItem'
+import TodoItem from '@/components/Todo/TodoItem'
 export default {
   name: 'todolist',
   components: {

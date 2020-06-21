@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TodoList from '@/components/TodoList'
+import TodoList from '@/components/Todo/TodoList'
 export default {
   name: 'todo',
   components: {

@@ -1,15 +1,24 @@
 <template>
   <div>
-    Home
+    <div class="mt-3">
+      <Intro :name="name" />
+    </div>
+    <Comments />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import Intro from '@/components/Home/Intro'
+import Comments from '@/components/Home/Comments'
 export default {
   name: 'Home',
-  components: {}
+  components: {
+    Intro,
+    Comments
+  },
+  data: () => ({
+    name: 'Максим'
+  })
 }
 </script>
 
