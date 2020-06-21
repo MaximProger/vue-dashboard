@@ -1,22 +1,35 @@
 <template>
-  <div class="card">
+  <div class="card mb-2">
     <div class="card-header">
-      Featured
+      {{ comment.email }}
     </div>
     <div class="card-body">
-      <h5 class="card-title">Специальный заголовок</h5>
+      <h5 class="card-title">{{ comment.name }}</h5>
       <p class="card-text">
-        With supporting text below as a natural lead-in to additional content.
+        {{ comment.body }}
       </p>
-      <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+      <!-- <a href="#" class="btn btn-primary">Переход куда-нибудь</a> -->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'commentsitem'
+  name: 'commentsitem',
+  props: ['comment']
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+.card-title {
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.card-text {
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+</style>
